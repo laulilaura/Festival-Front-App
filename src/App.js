@@ -1,11 +1,13 @@
 import logo from './picture/jeuLogo.png'
-//import './App.css';
+import './App.css';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Header from './component/Header';
+//import { makeStyles } from '@mui/styles';
 
+/*
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -17,6 +19,7 @@ const useStyles = makeStyles({
     padding: '0 30px',
   },
 });
+*/
 
 function App() {
   return (
