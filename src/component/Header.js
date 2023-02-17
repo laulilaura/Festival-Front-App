@@ -7,11 +7,22 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CasinoIcon from '@mui/icons-material/Casino';
+import {Link} from 'react-router-dom';
 
-const pages = ['A propos', 'Découvrir le festival !'];
+/*const pages = ['A propos', 'Découvrir le festival !', 'Découvrir les jeux','Bénévoles'];
+const pages = [
+  { name: "A propos", path: "/aPropos" },
+  { name: "Découvrir le festival !", path: "/infos" },
+  { name: "Découvrir les jeux", path: "/jeux" },
+  { name: "Bénévoles", path: "/benevoles" },
+  { name: "Maintenance", path: "/maintenance" },
+];*/
+const pages = [
+  { name: "Maintenance", path: "/maintenance" },
+  { name: "home", path: "/" }
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -20,16 +31,16 @@ function Header() {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (event) => {
     setAnchorElNav(null);
   };
 
 
   return (
-    <AppBar position="static" style={{backgroundColor:"#6C4ACD"}}>
+    <AppBar position="static" style={{backgroundColor:"#1C5588"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <CasinoIcon color='#915EFD' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}></CasinoIcon>
+          <CasinoIcon color='#1C5588' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}></CasinoIcon>
           <Typography
             variant="h6"
             noWrap
@@ -55,7 +66,7 @@ function Header() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="#915EFD"
+              color="#1C5588"
             >
               <MenuIcon />
             </IconButton>
@@ -77,11 +88,15 @@ function Header() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <div>
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ color:"#915EFD"}}>{page}</Typography>
-                </MenuItem>
+                <Link key={page.name} to={page.path} onClick={handleCloseNavMenu}>
+                  <MenuItem>
+                    <Typography textAlign="center" sx={{ color:"#1C5588"}}>{page.name}</Typography>
+                  </MenuItem>
+                </Link>
               ))}
+              </div>
             </Menu>
           </Box>
           <CasinoIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -105,13 +120,11 @@ function Header() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <Link key={page.name} to={page.path} onClick={handleCloseNavMenu}>
+              <MenuItem>
+                <Typography textAlign="center" sx={{ color:"white"}}>{page.name}</Typography>
+              </MenuItem>
+            </Link>
             ))}
           </Box>
 

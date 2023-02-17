@@ -1,0 +1,31 @@
+Refs d'Icons :
+
+https://www.flaticon.com/fr/packs/work-in-progress-2
+
+
+https://www.flaticon.com/fr/packs/kids-activities-12
+https://www.flaticon.com/fr/packs/education-633
+https://www.flaticon.com/fr/packs/discussion-39
+https://www.flaticon.com/fr/packs/language-learning-5
+
+https://www.flaticon.com/fr/packs/creative-tools-53
+
+https://www.flaticon.com/fr/packs/entertainment-103
+
+https://www.flaticon.com/fr/packs/contact-us-194
+
+
+Palettes :
+--1
+#FF5EFA --fushia
+#FF7AD1 --rose
+#FF96A5 --saumon
+#FFB875 --orange
+#FFD754 --jaune
+
+--2
+#F88F52 --orange
+#FBCE9E --beige
+#7ACFB0 --turquoise
+#00BDC8 --canard
+#1C5588 --bleu

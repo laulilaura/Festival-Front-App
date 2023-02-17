@@ -1,11 +1,12 @@
-import logo from './picture/jeuLogo.png'
-import './App.css';
 import * as React from 'react';
+import imageHome from './picture/familleHome.png'
+import Header from './component/Header';
+//import './App.css';
+//import {Link} from 'react-router-dom'
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Header from './component/Header';
-//import { makeStyles } from '@mui/styles';
+import Typography from '@mui/material/Typography';
 
 /*
 const useStyles = makeStyles({
@@ -22,35 +23,58 @@ const useStyles = makeStyles({
 */
 
 function App() {
+
   return (
     <div className="App">
       <Header/>
-      <img src={logo} className="App-logo" alt="logo" />
-      <Box class="form"
-      sx={{
-        bgcolor: 'background.paper',
-        boxShadow: 1,
-        borderRadius: 2,
-        p: 2,
-        backgroundColor: 'red',
-        width: '40%',
-        height: '100%',
-        //flexDirection: 'column'
-      }}
-      >
-        <TextField
-        id="standard-email"
-        label="e-mail"
-        variant="standard"
-        />
-        <TextField
-          id="standard-mdp"
-          label="mot de passe"
-          variant="standard"
-        />
-        <Button id="Button" variant="contained">Connexion</Button>
-      </Box>
+      <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', height:'100%', width:'100%'}}>
+        <Box
+        sx={{
+          display: 'flex', 
+          flexDirection: 'column',
+          width: '40%',
+          height: '100%'
+        }}>
+          <img style={{ height: '100%'}} src={imageHome} className="App-logo" alt="imageHome" />
+          <Typography variant="h2" gutterBottom sx={{display: 'flex',justifyContent: 'center'}}>
+            FestiFun
+          </Typography>
+          <Typography variant="h4" gutterBottom>
+            Bienvenu sur le site web de FestiFun, le premier festival de jeux pour tous à être pour tous
+          </Typography>
+          
+        </Box>
         
+        <Box className="form"
+        sx={{
+          display: 'flex', 
+          bgcolor: 'background.paper',
+          boxShadow: 2,
+          borderRadius: 2,
+          p: 2,
+          width: '40%',
+          height: '100%',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+        >
+          <Typography variant="h3" gutterBottom>
+            Connexion
+          </Typography>
+          <TextField
+          id="standard-email"
+          label="e-mail"
+          variant="standard"
+          />
+          <TextField
+            id="standard-mdp"
+            label="mot de passe"
+            variant="standard"
+          />
+          <Button id="Button" variant="contained">Connexion</Button>
+        </Box>
+      </Box>
     </div>
   );
 }
