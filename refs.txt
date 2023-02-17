@@ -15,15 +15,8 @@ https://www.flaticon.com/fr/packs/entertainment-103
 https://www.flaticon.com/fr/packs/contact-us-194
 
 
-Palettes :
+Palette :
 --1
-#FF5EFA --fushia
-#FF7AD1 --rose
-#FF96A5 --saumon
-#FFB875 --orange
-#FFD754 --jaune
-
---2
 #F88F52 --orange
 #FBCE9E --beige
 #7ACFB0 --turquoise

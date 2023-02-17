@@ -74,10 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npm install @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
 npm install @mui/icons-material
-npm install @mui/styles
+npm install @mui/styles --pas utilisé au final
 
-### install react-native-web
-npm install react-native-web
-
-### router
+### router (Navigation de page)
 react-router-dom
