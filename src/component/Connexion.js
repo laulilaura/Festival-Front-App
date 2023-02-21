@@ -1,12 +1,9 @@
 import * as React from 'react';
-import imageHome from './picture/familleHome.png'
-import Header from './component/Header';
+import imageConnexion from '../picture/familleHome.png';
+import Header from './Header';
 //import './App.css';
 //import {Link} from 'react-router-dom'
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+import { Box, Button, TextField, Typography } from '@mui/material';
 
 /*
 const useStyles = makeStyles({
@@ -22,12 +19,12 @@ const useStyles = makeStyles({
 });
 */
 
-function App() {
+function Connexion() {
 
   return (
-    <div className="App">
+    <div className="Connexion">
       <Header/>
-      <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', height:'100%', width:'100%'}}>
+      <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', height:'100%', width:'100%', mt:5}}>
         <Box
         sx={{
           display: 'flex', 
@@ -35,7 +32,7 @@ function App() {
           width: '40%',
           height: '100%'
         }}>
-          <img style={{ height: '100%'}} src={imageHome} className="App-logo" alt="imageHome" />
+          <img style={{ height: '100%'}} src={imageConnexion} className="App-logo" alt="imageHome" />
           <Typography variant="h2" gutterBottom sx={{display: 'flex',justifyContent: 'center'}}>
             FestiFun
           </Typography>
@@ -52,31 +49,34 @@ function App() {
           boxShadow: 2,
           borderRadius: 2,
           p: 2,
-          width: '40%',
+          width: '30%',
           height: '100%',
           flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          py: 3
         }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h3" sx={{m: 1}} gutterBottom>
             Connexion
           </Typography>
           <TextField
-          id="standard-email"
-          label="e-mail"
-          variant="standard"
+            sx={{m: 1}}
+            id="standard-email"
+            label="e-mail"
+            variant="standard"
           />
           <TextField
+            sx={{m: 1}}
             id="standard-mdp"
             label="mot de passe"
             variant="standard"
           />
-          <Button id="Button" variant="contained">Connexion</Button>
+          <Button id="Button" variant="contained" sx={{m: 2}}>Connexion</Button>
         </Box>
       </Box>
     </div>
   );
 }
 
-export default App;
+export default Connexion;

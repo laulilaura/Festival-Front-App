@@ -10,8 +10,8 @@ function MaintenancePage() {
   return (
       <Box>
         <Header/>
-        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height:'100%', width:'100%'}}>
-          <img style={{ width: '40%'}} src={logoMaintenance} alt="icon de maintenance"/>
+        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height:'100%', width:'100%', my: 5}}>
+          <img style={{ width: 200}} src={logoMaintenance} alt="icon de maintenance"/>
           <Typography variant="overline" display="block">Page en construction, revient plus tard !</Typography >
         </Box>
       </Box>

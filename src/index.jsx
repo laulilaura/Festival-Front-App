@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// Components
+import Connexion from './component/Connexion';
 import Maintenance from './component/MaintenancePage';
+import Home from './component/Home';
+import Jeux from './component/Jeux';
+import Zones from './component/Zones';
+import Benevoles from './component/Benevoles';
 import ErrorPage from "./component/error-page";
+
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,11 +23,27 @@ https://reactrouter.com/en/main/start/tutorial
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/connexion",
+    element: <Connexion />,
     errorElement: <ErrorPage />,
   },{
     path: "/maintenance",
     element: <Maintenance />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/jeux",
+    element: <Jeux />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/zones",
+    element: <Zones />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/benevoles",
+    element: <Benevoles />,
     errorElement: <ErrorPage />
   },
 ]);

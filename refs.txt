@@ -15,7 +15,7 @@ https://www.flaticon.com/fr/packs/entertainment-103
 https://www.flaticon.com/fr/packs/contact-us-194
 
 
-Palette :
+Palette : 
 --1
 #F88F52 --orange
 #FBCE9E --beige

@@ -20,8 +20,11 @@ const pages = [
   { name: "Maintenance", path: "/maintenance" },
 ];*/
 const pages = [
-  { name: "Maintenance", path: "/maintenance" },
-  { name: "home", path: "/" }
+  { name: "Home", path: "/" },
+  { name: "Connexion", path: "/connexion" },
+  { name: "Zones", path: "/zones" },
+  { name: "Jeux", path: "/jeux" },
+  { name: "Bénévoles", path: "/benevoles" },
 ];
 
 function Header() {
