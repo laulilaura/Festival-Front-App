@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 import { FixedSizeList } from 'react-window';
 import {Link} from 'react-router-dom';
@@ -27,7 +28,7 @@ export default function Benevoles(){
         <Header/>
         <Grid container spacing={2} sx={{height:'100%', width:'100%',  display: 'flex', m:0, p:0}}>
             <Grid xs={12} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                <Typography variant="h2">Benevoles</Typography>
+                <Typography variant="h2">Affectation des bénévoles</Typography>
             </Grid>
             <Grid xs={6} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <Button sx={{backgroundColor:'#FBCE9E'}} variant="filledTonal" component={Link} to="/maintenance">Par crénau</Button>
@@ -49,6 +50,7 @@ export default function Benevoles(){
                 </Box>
             </Grid>
         </Grid>
+        <Footer colorBackground="common.white" color="#FBCE9E"/>
     </div>
     );
 };

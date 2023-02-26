@@ -1,30 +1,30 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import MenuItem from '@mui/material/MenuItem';
-import CasinoIcon from '@mui/icons-material/Casino';
 import {Link} from 'react-router-dom';
 
-/*const pages = ['A propos', 'Découvrir le festival !', 'Découvrir les jeux','Bénévoles'];
+import MenuIcon from '@mui/icons-material/Menu';
+import CasinoIcon from '@mui/icons-material/Casino';
+
+import {AppBar, Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, createTheme, Button } from '@mui/material';
+
+const theme = createTheme({
+  basic: {
+    color: 'white',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+  },
+  special: {
+    backgroundColor: 'red',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+  }
+});
+
 const pages = [
-  { name: "A propos", path: "/aPropos" },
-  { name: "Découvrir le festival !", path: "/infos" },
-  { name: "Découvrir les jeux", path: "/jeux" },
-  { name: "Bénévoles", path: "/benevoles" },
-  { name: "Maintenance", path: "/maintenance" },
-];*/
-const pages = [
-  { name: "Home", path: "/" },
-  { name: "Connexion", path: "/connexion" },
-  { name: "Zones", path: "/zones" },
-  { name: "Jeux", path: "/jeux" },
-  { name: "Bénévoles", path: "/benevoles" },
+  { name: "Home", path: "/", styleSx: theme.basic },
+  { name: "Connexion", path: "/connexion", styleSx: theme.basic },
+  { name: "Zones", path: "/zones", styleSx: theme.basic },
+  { name: "Jeux", path: "/jeux", styleSx: theme.basic },
+  //{ name: "Bénévoles", path: "/benevoles", styleSx: theme.special },
 ];
 
 function Header() {
@@ -40,9 +40,10 @@ function Header() {
 
 
   return (
-    <AppBar position="static" style={{backgroundColor:"#1C5588"}}>
+    <AppBar position="static" style={{backgroundColor:"#7ACFB0"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+            {/* ICI PAGE FORMAT TELEPHONE */}
           <CasinoIcon color='#1C5588' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}></CasinoIcon>
           <Typography
             variant="h6"
@@ -95,13 +96,19 @@ function Header() {
               {pages.map((page) => (
                 <Link key={page.name} to={page.path} onClick={handleCloseNavMenu}>
                   <MenuItem>
-                    <Typography textAlign="center" sx={{ color:"#1C5588"}}>{page.name}</Typography>
+                    <Typography textAlign="center" variant="h6" sx={{ color:"#1C5588"}}>{page.name}</Typography>
                   </MenuItem>
                 </Link>
               ))}
+              <Link key="Bénévoles" to="/benevoles" onClick={handleCloseNavMenu} rel="stylesheet" sx={{ display: 'none' }}>
+                <MenuItem>
+                  <Typography textAlign="center"  variant="h6" >Bénévoles</Typography>
+                </MenuItem>
+              </Link>
               </div>
             </Menu>
           </Box>
+            {/* ICI PAGE FORMAT ORDINATEUR */}
           <CasinoIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -121,14 +128,15 @@ function Header() {
           >
             FESTI FUN
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } , justifyContent: 'space-around'}}>
             {pages.map((page) => (
-              <Link key={page.name} to={page.path} onClick={handleCloseNavMenu}>
+              <Link key={page.name} to={page.path} onClick={handleCloseNavMenu} rel="stylesheet" sx={{ display: 'none' }}>
               <MenuItem>
-                <Typography textAlign="center" sx={{ color:"white"}}>{page.name}</Typography>
+                <Typography textAlign="center"  variant="h6" sx={{ fontSize: page.styleSx }}>{page.name}</Typography>
               </MenuItem>
             </Link>
             ))}
+            <Button id="buttonBenevoles" variant="contained" sx={{m: 2, backgroundColor:'#F88F52'}} component={Link} to="/benevoles"> Bénévoles</Button>
           </Box>
 
         </Toolbar>

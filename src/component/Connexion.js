@@ -1,23 +1,8 @@
 import * as React from 'react';
 import imageConnexion from '../picture/familleHome.png';
 import Header from './Header';
-//import './App.css';
-//import {Link} from 'react-router-dom'
+import Footer from './Footer';
 import { Box, Button, TextField, Typography } from '@mui/material';
-
-/*
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-  },
-});
-*/
 
 function Connexion() {
 
@@ -75,6 +60,7 @@ function Connexion() {
           <Button id="Button" variant="contained" sx={{m: 2}}>Connexion</Button>
         </Box>
       </Box>
+      <Footer colorBackground="common.white" color="#7ACFB0" />
     </div>
   );
 }
