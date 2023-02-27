@@ -177,7 +177,7 @@ function Jeux(){
         className={classes.formLabel}
         id="storage-label"
       >
-        Storage
+        Recherche
       </FormLabel>
       <RadioGroup
         aria-labelledby="storage-label"
