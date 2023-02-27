@@ -4,8 +4,12 @@ import axios from "axios";
 import Header from './Header';
 import Footer from './Footer';
 
-import { Typography, Grid, Box, Button, ToggleButtonGroup, ToggleButton } from '@mui/material';
-import { FormControl, FormLabel, Radio, RadioGroup} from '@mui/material';
+import { Typography, Grid, Box, Button, } from '@mui/material';
+import { FormControl, FormLabel, Radio, RadioGroup, } from '@mui/material';
+
+import { makeStyles } from '@mui/styles';
+
+import Sheet from '@mui/joy/Sheet';
 
 import {Link} from 'react-router-dom';
 
@@ -21,8 +25,22 @@ const baseURLGETJeuxByZone = "http://localhost:3000/zone/";
 const baseURLGETJeuxByNom = "http://localhost:3000/jeu/byName";
 const baseURLGETJeuxByType = "http://localhost:3000/jeu/byType";
 
+const useStyles = makeStyles((theme) => ({
+  formLabel: {
+    mb: 2,
+    fontWeight: 'xl',
+    textTransform: 'uppercase',
+    fontSize: 'xs',
+    letterSpacing: '0.15rem',
+  },
+  secondBox: {
+    // Styles spécifiques pour la deuxième Box
+  },
+}));
 
 function Jeux(){
+  
+  const classes = useStyles();
 
   const [value, setValue] = React.useState('zone');
 
@@ -152,6 +170,60 @@ function Jeux(){
       </RadioGroup>
     </FormControl>
       
+    </Box>
+
+    <Box sx={{ width: 300 }}>
+      <FormLabel
+        className={classes.formLabel}
+        id="storage-label"
+      >
+        Storage
+      </FormLabel>
+      <RadioGroup
+        aria-labelledby="storage-label"
+        defaultValue="512GB"
+        size="lg"
+        sx={{ gap: 1.5 }}
+      >
+        {['512GB', '1TB', '2TB'].map((value) => (
+          <Sheet
+            key={value}
+            sx={{
+              p: 2,
+              borderRadius: 'md',
+              boxShadow: 'sm',
+              bgcolor: 'background.body',
+            }}
+          >
+            <Radio
+              label={`${value} SSD storage`}
+              overlay
+              disableIcon
+              value={value}
+              slotProps={{
+                label: ({ checked }) => ({
+                  sx: {
+                    fontWeight: 'lg',
+                    fontSize: 'md',
+                    color: checked ? 'text.primary' : 'text.secondary',
+                  },
+                }),
+                action: ({ checked }) => ({
+                  sx: (theme) => ({
+                    ...(checked && {
+                      '--variant-borderWidth': '2px',
+                      '&&': {
+                        // && to increase the specificity to win the base :hover styles
+                        borderColor: theme.vars.palette.primary[500],
+                      },
+                    }),
+                  }),
+                }),
+              }}
+            />
+          </Sheet>
+        ))}
+      </RadioGroup>
     </Box>
     
     <Footer colorBackground="common.white" color="#7ACFB0" />

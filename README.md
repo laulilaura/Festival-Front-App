@@ -75,7 +75,8 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
 npm install @mui/icons-material
 npm install @mui/styles --pas utilisé au final
-npm i @mui/material-next
+npm install @mui/material-next
+npm install @mui/joy
 
 ### router (Navigation de page)
 react-router-dom

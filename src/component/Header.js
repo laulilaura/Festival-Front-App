@@ -128,7 +128,7 @@ function Header() {
           >
             FESTI FUN
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } , justifyContent: 'space-around'}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } , justifyContent: 'space-around', alignItems: 'center' }}>
             {pages.map((page) => (
               <Link key={page.name} to={page.path} onClick={handleCloseNavMenu} rel="stylesheet" sx={{ display: 'none' }}>
               <MenuItem>
