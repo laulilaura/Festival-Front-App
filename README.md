@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npm install @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
 npm install @mui/icons-material
-npm install @mui/styles --pas utilisé au final
+npm install @mui/styles
 npm install @mui/material-next
 npm install @mui/joy
 
@@ -86,3 +86,6 @@ npm install axios
 
 ### listes
 npm install react-window
+
+### toasts
+npm i material-react-toastify

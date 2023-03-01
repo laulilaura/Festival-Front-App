@@ -5,6 +5,9 @@ import Footer from './Footer';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { ApiURLAuth } from '../config';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Connexion() {
 
@@ -12,6 +15,8 @@ function Connexion() {
     identifiant: "",
     mdp: ""
   })
+
+  const [erreurForm, setErreurForm] = React.useState(false)
 
   const handleChange = ({currentTarget}) => {
     setCredentials({
@@ -28,13 +33,29 @@ function Connexion() {
       Window.localStorage.setItem('token', response.data.token)
     })
     .catch(error => {
-      console.log(error.response.data)
+      if (!error.response) {
+        toast.error("Il est impossible de se connecter actuellement")
+      } else {
+        switch (error.response.status) {
+          case 404:
+            toast.error("Il est impossible de se connecter actuellement")
+            break;
+          case 500:
+            setErreurForm(true)
+            toast.warning("Identifiant ou mot de passe incorrect")
+            break;
+          default:
+            toast.error("Une erreur est survenue")
+            break;
+        }
+    }
     })
   }
 
   return (
     <div className="Connexion">
       <Header/>
+      <ToastContainer />
       <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', height:'100%', width:'100%', mt:5}}>
         <Box
         sx={{
@@ -77,6 +98,7 @@ function Connexion() {
             label="e-mail"
             variant="standard"
             name='identifiant'
+            error={erreurForm}
             onChange = {handleChange}
           />
           <TextField
@@ -85,6 +107,7 @@ function Connexion() {
             label="mot de passe"
             variant="standard"
             name='mdp'
+            error={erreurForm}
             onChange = {handleChange}
           />
           <Button id="Button" type='submit' onClick={handleSubmit} variant="contained" sx={{m: 2}}>Connexion</Button>
