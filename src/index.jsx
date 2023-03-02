@@ -8,6 +8,7 @@ import Home from './component/Home';
 import Jeux from './component/Jeux';
 import Zones from './component/Zones';
 import Benevoles from './component/Benevoles';
+import AdminHome from './component/AdminHome';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
     path: "/benevoles",
     element: <Benevoles />,
     errorElement: <ErrorPage />
-  },
+  },{
+    path: "/admin",
+    element: <AdminHome />,
+    errorElement: <ErrorPage />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
