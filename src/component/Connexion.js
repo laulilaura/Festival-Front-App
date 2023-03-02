@@ -32,12 +32,12 @@ function Connexion() {
         mdpAdmin: credentials.mdp,
       })
       .then((response) => {
-        console.log(response)
+        console.log(response);
         localStorage.setItem("token", response.data.token);
         toast.success("Vous êtes connecté");
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         if (!error.response) {
           toast.error("Il est impossible de se connecter actuellement");
         } else {
