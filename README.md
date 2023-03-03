@@ -92,3 +92,6 @@ npm i material-react-toastify
 
 ### phone
 npm i material-ui-phone-number
+
+### Drag and Drop
+npm install @hello-pangea/dnd

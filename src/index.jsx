@@ -9,6 +9,7 @@ import Jeux from './component/Jeux';
 import Zones from './component/Zones';
 import Benevoles from './component/Benevoles';
 import AdminHome from './component/AdminHome';
+import Affectations from './component/AffectationV2/Affectations';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';
@@ -48,8 +49,13 @@ const router = createBrowserRouter([
     element: <Benevoles />,
     errorElement: <ErrorPage />
   },{
+    // TODO: vérif que les paths te vont et que jles ai fait correctement
     path: "/admin",
     element: <AdminHome />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/affectations",
+    element: <Affectations />,
     errorElement: <ErrorPage />
   }
 ]);
