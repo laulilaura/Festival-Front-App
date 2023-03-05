@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { Button } from "@mui/material";
-import { ApiURLBenevoles, ApiURLAffectation, ApiURLZones } from "../../config";
-import Header from "../Header";
-import Footer from "../Footer";
+import { ApiURLBenevoles, ApiURLAffectation, ApiURLZones } from "../config";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function Affectations() {
   const [DefaultListeAffecations, setDefaultListeAffecations] = useState([]);

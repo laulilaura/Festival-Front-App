@@ -9,7 +9,8 @@ import Jeux from './component/Jeux';
 import Zones from './component/Zones';
 import Benevoles from './component/Benevoles';
 import AdminHome from './component/AdminHome';
-import Affectations from './component/Affectation V3/Affectations';
+import Affectations from './component/Affectations';
+import Incription from './component/Incription';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   },{
     path: "/affectations",
     element: <Affectations />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/inscription",
+    element: <Incription />,
     errorElement: <ErrorPage />
   }
 ]);
