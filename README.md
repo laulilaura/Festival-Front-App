@@ -70,6 +70,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+### !! Si problème de dépendance
+--legacy-peer-deps
+
 ### install Mui (React component library)
 npm install @mui/material @emotion/react @emotion/styled
 npm install @fontsource/roboto
@@ -79,7 +82,7 @@ npm install @mui/material-next
 npm install @mui/joy
 
 ### router (Navigation de page)
-react-router-dom
+npm install react-router-dom
 
 ### Axios requetes https
 npm install axios

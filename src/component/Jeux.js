@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Header from './Header';
 import Footer from './Footer';
+import ListJeux from './ListJeux';
 
 import { Typography, Grid, Box, Button, } from '@mui/material';
 import { FormControl, FormLabel, Radio, RadioGroup, } from '@mui/material';
@@ -37,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
     // Styles spécifiques pour la deuxième Box
   },
 }));
+
+
 
 function Jeux(){
   
@@ -140,92 +143,7 @@ function Jeux(){
       </Box>
 
     </Box>
-
-    <Box id="sectionList" m={3} mt={10}>
-      <Typography variant="h3" gutterBottom sx={{display:'flex',justifyContent:'center'}}>Section list</Typography>
-      <Box sx={{display:'flex', flexDirection:'row', justifyContent: 'space-evenly'}}>
-        <Grid xs={4} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Button sx={{backgroundColor:'#FBCE9E'}} variant="filledTonal" component={Link} to="/maintenance">Par nom</Button>
-        </Grid>
-        <Grid xs={4} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Button sx={{backgroundColor:'#FBCE9E'}} variant="filledTonal" component={Link} to="/maintenance">Par type</Button>
-        </Grid>
-        <Grid xs={4} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Button sx={{backgroundColor:'#FBCE9E'}} variant="filledTonal" component={Link} to="/maintenance">Par zone</Button>
-        </Grid>
-      </Box>
-
-      <FormControl>
-      <FormLabel>Type de recherche</FormLabel>
-      <RadioGroup
-         defaultValue="zone"
-         name="controlled-radio-buttons-group"
-         value={value}
-         onChange={handleChange}
-        sx={{ my: 1,color:'#FBCE9E', display:'flex', flexDirection: 'row'}}
-      >
-        <Radio sx={{color:'#FBCE9E','&, &.Mui-checked': {color: '#FBCE9E',height: 100,width: 100}}} value="zone" label="Zone" />
-        <Radio sx={{color:'#FBCE9E','&, &.Mui-checked': {color: '#FBCE9E',height: 100,width: 100}}} value="nom" label="Nom" />
-        <Radio sx={{color:'#FBCE9E','&, &.Mui-checked': {color: '#FBCE9E',height: 100,width: 100}}} value="type" label="Type" />
-      </RadioGroup>
-    </FormControl>
-      
-    </Box>
-
-    <Box sx={{ width: 300 }}>
-      <FormLabel
-        className={classes.formLabel}
-        id="storage-label"
-      >
-        Recherche
-      </FormLabel>
-      <RadioGroup
-        aria-labelledby="storage-label"
-        defaultValue="512GB"
-        size="lg"
-        sx={{ gap: 1.5 }}
-      >
-        {['512GB', '1TB', '2TB'].map((value) => (
-          <Sheet
-            key={value}
-            sx={{
-              p: 2,
-              borderRadius: 'md',
-              boxShadow: 'sm',
-              bgcolor: 'background.body',
-            }}
-          >
-            <Radio
-              label={`${value} SSD storage`}
-              overlay
-              disableIcon
-              value={value}
-              slotProps={{
-                label: ({ checked }) => ({
-                  sx: {
-                    fontWeight: 'lg',
-                    fontSize: 'md',
-                    color: checked ? 'text.primary' : 'text.secondary',
-                  },
-                }),
-                action: ({ checked }) => ({
-                  sx: (theme) => ({
-                    ...(checked && {
-                      '--variant-borderWidth': '2px',
-                      '&&': {
-                        // && to increase the specificity to win the base :hover styles
-                        borderColor: theme.vars.palette.primary[500],
-                      },
-                    }),
-                  }),
-                }),
-              }}
-            />
-          </Sheet>
-        ))}
-      </RadioGroup>
-    </Box>
-    
+    <ListJeux/>
     <Footer colorBackground="common.white" color="#7ACFB0" />
 
   </div>
