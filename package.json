@@ -6,7 +6,12 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
+<<<<<<< HEAD
     "@mui/icons-material": "^5.11.11",
+=======
+    "@hello-pangea/dnd": "^16.2.0",
+    "@mui/icons-material": "^5.11.0",
+>>>>>>> 2cbbc818365a1b8d95a79ddb7649b8301440ba3b
     "@mui/joy": "^5.0.0-alpha.68",
     "@mui/material": "^5.11.11",
     "@mui/material-next": "^6.0.0-alpha.75",
@@ -16,9 +21,11 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.3.4",
     "https": "^1.0.0",
+    "libphonenumber-js": "^1.10.21",
     "material-react-toastify": "^2.0.1",
     "material-ui-phone-number": "^3.0.0",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-native-web": "^0.18.12",
     "react-router-dom": "^6.8.2",
