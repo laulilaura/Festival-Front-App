@@ -9,7 +9,7 @@ import Jeux from './component/Jeux';
 import Zones from './component/Zones';
 import Benevoles from './component/Benevoles';
 import AdminHome from './component/AdminHome';
-import Affectations from './component/AffectationV2/Affectations';
+import Affectations from './component/Affectation V3/Affectations';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';

@@ -32,7 +32,6 @@ function Connexion() {
         mdpAdmin: credentials.mdp,
       })
       .then((response) => {
-        console.log(response);
         localStorage.setItem("token", response.data.token);
         toast.success("Vous êtes connecté");
       })
