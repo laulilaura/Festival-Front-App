@@ -4,7 +4,7 @@ import { Typography, Box } from '@mui/material';
 export default function Footer(props){
     return(
         <div>
-            <Box  backgroundColor={props.colorBackground} color={props.color} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
+            <Box  backgroundColor={props.colorBackground} color={props.color} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', pt:5}}>
                 <Typography>© 2023, “FestiFun, tous droits réservés”</Typography>
             </Box>
         </div>

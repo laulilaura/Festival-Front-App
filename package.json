@@ -6,12 +6,8 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
-<<<<<<< HEAD
-    "@mui/icons-material": "^5.11.11",
-=======
     "@hello-pangea/dnd": "^16.2.0",
-    "@mui/icons-material": "^5.11.0",
->>>>>>> 2cbbc818365a1b8d95a79ddb7649b8301440ba3b
+    "@mui/icons-material": "^5.11.11",
     "@mui/joy": "^5.0.0-alpha.68",
     "@mui/material": "^5.11.11",
     "@mui/material-next": "^6.0.0-alpha.75",

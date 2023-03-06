@@ -1,16 +1,10 @@
-import React, { useState }  from 'react';
-import axios from "axios";
+import React from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
 import ListJeux from './ListJeux';
 
 import { Typography, Grid, Box, Button, } from '@mui/material';
-import { FormControl, FormLabel, Radio, RadioGroup, } from '@mui/material';
-
-import { makeStyles } from '@mui/styles';
-
-import Sheet from '@mui/joy/Sheet';
 
 import {Link} from 'react-router-dom';
 
@@ -21,35 +15,15 @@ import ambianceJeux from '../picture/icons/ambianceJeux.png';
 import initieJeux from '../picture/icons/initieJeux.png';
 import expertJeux from '../picture/icons/expertJeux.png';
 
-
-const baseURLGETJeuxByZone = "http://localhost:3000/zone/";
-const baseURLGETJeuxByNom = "http://localhost:3000/jeu/byName";
-const baseURLGETJeuxByType = "http://localhost:3000/jeu/byType";
-
-const useStyles = makeStyles((theme) => ({
-  formLabel: {
-    mb: 2,
-    fontWeight: 'xl',
-    textTransform: 'uppercase',
-    fontSize: 'xs',
-    letterSpacing: '0.15rem',
-  },
-  secondBox: {
-    // Styles spécifiques pour la deuxième Box
-  },
-}));
+// Import des images de fin de page
+import echecPions from '../picture/icons/echecPions.png';
+import cartes from '../picture/icons/cartes.png';
+import porte from '../picture/icons/porte.png';
+import jeuxVideo from '../picture/icons/jeux-video.png';
 
 
 
 function Jeux(){
-  
-  const classes = useStyles();
-
-  const [value, setValue] = React.useState('zone');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
   
   return (
   <div className="Jeux">
@@ -143,7 +117,13 @@ function Jeux(){
       </Box>
 
     </Box>
-    <ListJeux/>
+    <ListJeux sx={{m:15}}/>
+    <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+      <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={echecPions} className="App-logo" alt="echecPions" /></Grid>
+      <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={cartes} className="App-logo" alt="cartes" /></Grid>
+      <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={porte} className="App-logo" alt="porte" /></Grid>
+      <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={jeuxVideo} className="App-logo" alt="jeuxVideo" /></Grid>
+    </Box>
     <Footer colorBackground="common.white" color="#7ACFB0" />
 
   </div>
