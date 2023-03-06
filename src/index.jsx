@@ -11,6 +11,7 @@ import Benevoles from './component/Benevoles';
 import AdminHome from './component/AdminHome';
 import Affectations from './component/Affectations';
 import Incription from './component/Incription';
+import ListeInscriptionBenevole from './component/ListeInscriptionBenevole';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   },{
     path: "/inscription",
     element: <Incription />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/listeInscriptionBenevole",
+    element: <ListeInscriptionBenevole />,
     errorElement: <ErrorPage />
   }
 ]);
