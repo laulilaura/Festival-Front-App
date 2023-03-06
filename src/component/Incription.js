@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Grid,
   Paper,
@@ -7,11 +6,12 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import PersonIcon from '@mui/icons-material/Person';
 import { isValidNumber } from "libphonenumber-js";
 import MuiPhoneNumber from "material-ui-phone-number";
 import React, { useState } from "react";
 import axios from "axios";
-import { ApiURLBenevoles } from "../config";
+import { ApiURLBenevole } from "../config";
 import { toast, ToastContainer } from "react-toastify";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -46,18 +46,20 @@ function Incription() {
 
   const handlePhoneNumberBlur = (event) => {
     if (!isValidNumber(event.target.value, "FR")) {
-        toast.warning("Le numéro de téléphone n'est pas valide\nIl ne sera pas enregistré s'il reste comme cela");
+      toast.warning(
+        "Le numéro de téléphone n'est pas valide\nIl ne sera pas enregistré s'il reste comme cela"
+      );
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     if (!isValidNumber(benevole.tel, "FR")) {
-        benevole.tel = undefined;
+      benevole.tel = undefined;
     }
     axios
-      .post(ApiURLBenevoles, {
+      .post(ApiURLBenevole, {
         prenomBenevole: benevole.prenom,
         nomBenevole: benevole.nom,
         emailBenevole: benevole.mail,
@@ -75,9 +77,7 @@ function Incription() {
         } else {
           switch (error.response.status) {
             case 404:
-              toast.error(
-                "Il est impossible de s'inscrire actuellement"
-              );
+              toast.error("Il est impossible de s'inscrire actuellement");
               break;
             case 500:
               toast.warning("Il y a une erreur dans le formulaire");
@@ -99,7 +99,7 @@ function Incription() {
       <Grid>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
-            <Avatar></Avatar>
+            <PersonIcon />
             <h2 style={headerStyle}>Inscription</h2>
 
             <Typography style={headerStyle} variant="caption">

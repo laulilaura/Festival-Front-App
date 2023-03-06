@@ -22,6 +22,11 @@ import prochain from "../picture/icons/prochain.png";
 const baseURLGETZones = "http://localhost:3000/zone/";
 
 function Zones() {
+
+  function onClickList(){
+    document.getElementById('listeZones').scrollIntoView({behavior:'smooth'});
+  }
+
   const [zones, setZones] = React.useState([]);
 
   React.useEffect(() => {
@@ -64,8 +69,8 @@ function Zones() {
           Impatient.e de connaître notre liste de zone ?
         </Typography>
         <Button
+          onClick={onClickList}
           component={Link}
-          to="#sectionList"
           variant="contained"
           sx={{ alignItems: "center", backgroundColor: "#F88F52", m: 2 }}
         >
@@ -93,7 +98,7 @@ function Zones() {
           }}
         >
           <Typography variant="h4" sx={{ my: 2 }} gutterBottom>
-            Avantage
+            Nos zones
           </Typography>
           <Typography variant="h6" gutterBottom>
             Nous sommes ravis de vous présenter les différentes zones de jeux du
@@ -141,6 +146,7 @@ function Zones() {
           p: 5,
         }}
       >
+        <div id="#listeZones">
         <List>
           {zones.map((zone) => (
             <Box
@@ -200,6 +206,7 @@ function Zones() {
             </Box>
           ))}
         </List>
+        </div>
       </Grid>
       <Footer colorBackground="common.white" color="#7ACFB0" />
     </div>

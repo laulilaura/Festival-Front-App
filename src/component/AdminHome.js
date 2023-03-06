@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from "axios";
-import { ApiURLBenevoles } from "../config";
+import { ApiURLBenevole } from "../config";
 import MuiPhoneNumber from "material-ui-phone-number";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -45,7 +45,7 @@ export default function AdminHome() {
     event.preventDefault();
 
     axios
-      .post(ApiURLBenevoles, {
+      .post(ApiURLBenevole, {
         prenomBenevole: benevoles.prenom,
         nomBenevole: benevoles.nom,
         emailBenevole: benevoles.mail,

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import { Button } from "@mui/material";
-import { ApiURLBenevoles, ApiURLAffectation, ApiURLZones } from "../config";
+import { Button, Grid } from "@mui/material";
+import { ApiURLBenevole, ApiURLAffectation, ApiURLZone } from "../config";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -23,9 +23,9 @@ function Affectations() {
       try {
         const [responseBenevoles, responseAffectations, responseZones] =
           await Promise.all([
-            axios.get(ApiURLBenevoles),
+            axios.get(ApiURLBenevole),
             axios.get(ApiURLAffectation),
-            axios.get(ApiURLZones),
+            axios.get(ApiURLZone),
           ]);
 
         responseAffectations.data.forEach((affectation) => {
@@ -141,12 +141,12 @@ function Affectations() {
     console.log("benevolesToDelete", benevolesToDelete);
 
     const response1 = await axios.post(
-      ApiURLAffectation + "/addBenevoles",
+      ApiURLAffectation + "addBenevoles",
       benevolesToAdd,
       config
     );
     const response2 = await axios.post(
-      ApiURLAffectation + "/removeBenevoles",
+      ApiURLAffectation + "removeBenevoles",
       benevolesToDelete,
       config
     );
@@ -200,55 +200,68 @@ function Affectations() {
 
       <h1>Affectations</h1>
 
-      <div className="listeBenevoles" onDragStart={start} onDragOver={over}>
-        {listeBenevoles.map((benevole) => (
-          <div id={benevole._id} key={benevole._id + "1"} draggable="true">
-            <h2>
-              {benevole.prenomBenevole} {benevole.nomBenevole}
-            </h2>
-            <h3>{benevole.emailBenevole}</h3>
-          </div>
-        ))}
-      </div>
-
-      <div className="listeAffectations">
-        {listeAffectations.map((affectation) => {
-          const nomZone = affectation.zone.nomZone;
-
-          let nomZoneElement = null;
-          if (nomZone !== zoneCourante) {
-            nomZoneElement = nomZone;
-            zoneCourante = nomZone;
-          }
-          return (
-            <div
-              key={affectation._id}
-              onDragStart={start}
-              onDragOver={over}
-              onDrop={(event) => drop(event, affectation)}
-            >
-              <h3>{nomZoneElement}</h3>
-              <h4>{affectation.heureDebut.heureDebut}</h4>
-              <h4>Drop here</h4>
-
-              <div className="affectation">
-                {affectation.benevoles.map((benevole) => (
-                  <div id={benevole._id} key={benevole._id} draggable="true">
-                    <h5>
-                      {benevole.prenomBenevole} {benevole.nomBenevole}
-                    </h5>
-                    <h6>{benevole.emailBenevole}</h6>
-                    <p>{benevole._id}</p>
-                    <Button onClick={(e) => onDelete(affectation, benevole)}>
-                      Supprimer
-                    </Button>
-                  </div>
-                ))}
+      <Grid container spacing={3}>
+        <Grid item xs={3}>
+          <h2>Liste des bénévoles</h2>
+          <div className="listeBenevoles" onDragStart={start} onDragOver={over}>
+            {listeBenevoles.map((benevole) => (
+              <div id={benevole._id} key={benevole._id + "1"} draggable="true">
+                <h2>
+                  {benevole.prenomBenevole} {benevole.nomBenevole}
+                </h2>
+                {/* <h3>{benevole.emailBenevole}</h3> */}
               </div>
-            </div>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+        </Grid>
+
+        <Grid item xs={9}>
+          <h2>Liste des affectations</h2>
+          <div className="listeAffectations">
+            {listeAffectations.map((affectation) => {
+              const nomZone = affectation.zone.nomZone;
+
+              let nomZoneElement = null;
+              if (nomZone !== zoneCourante) {
+                nomZoneElement = nomZone;
+                zoneCourante = nomZone;
+              }
+              return (
+                <div
+                  key={affectation._id}
+                  onDragStart={start}
+                  onDragOver={over}
+                  onDrop={(event) => drop(event, affectation)}
+                >
+                  <h3>{nomZoneElement}</h3>
+                  <h4>{affectation.heureDebut.heureDebut}</h4>
+                  <h4>Drop here</h4>
+
+                  <div className="affectation">
+                    {affectation.benevoles.map((benevole) => (
+                      <div
+                        id={benevole._id}
+                        key={benevole._id}
+                        draggable="true"
+                      >
+                        <h5>
+                          {benevole.prenomBenevole} {benevole.nomBenevole}
+                        </h5>
+                        <h6>{benevole.emailBenevole}</h6>
+                        <Button
+                          onClick={(e) => onDelete(affectation, benevole)}
+                        >
+                          Supprimer
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Grid>
+      </Grid>
 
       <Footer />
     </div>

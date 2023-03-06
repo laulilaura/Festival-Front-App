@@ -27,7 +27,7 @@ function Connexion() {
     event.preventDefault();
 
     axios
-      .post(ApiURLAuth + "/login", {
+      .post(ApiURLAuth + "login", {
         mailAdmin: credentials.identifiant,
         mdpAdmin: credentials.mdp,
       })

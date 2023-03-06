@@ -22,16 +22,19 @@ import porte from '../picture/icons/porte.png';
 import jeuxVideo from '../picture/icons/jeux-video.png';
 
 
-
 function Jeux(){
   
+  function onClickList(){
+    document.getElementById('listeJeux').scrollIntoView({behavior:'smooth'});
+  }
+
   return (
   <div className="Jeux">
     <Header/>
     <Typography variant="h2" sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', m:1}}>Jeux</Typography>
     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', mb:10}}>
       <Typography variant="h4" m={2}>Impatient.e de connaître notre liste de jeu ?</Typography>
-      <Button component={Link} to='#sectionList' variant="contained" sx={{ alignItems: 'center', backgroundColor:'#F88F52', m:2}}>Aller à la liste de jeux</Button>
+      <Button onClick={onClickList} component={Link} variant="contained" sx={{ alignItems: 'center', backgroundColor:'#F88F52', m:2}}>Aller à la liste de jeux</Button>
     </Box>
       
     <Box id="infosJeux" m={3}>
@@ -117,7 +120,9 @@ function Jeux(){
       </Box>
 
     </Box>
-    <ListJeux sx={{m:15}}/>
+    <div id="listeJeux"><ListJeux sx={{m:15}} /> </div>
+    
+
     <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
       <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={echecPions} className="App-logo" alt="echecPions" /></Grid>
       <Grid xs={3}><img style={{ maxWidth: '30%', maxHeight: '30%' }} src={cartes} className="App-logo" alt="cartes" /></Grid>

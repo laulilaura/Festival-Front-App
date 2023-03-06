@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ApiURLBenevoles } from "../config";
+import { ApiURLBenevole } from "../config";
 import {
   Card,
   CardActions,
@@ -8,12 +8,13 @@ import {
   Typography,
   Button,
   Collapse,
-  Avatar,
 } from "@mui/material";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { toast, ToastContainer } from "react-toastify";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function ListeInscriptionBenevole() {
   const token = localStorage.getItem("token");
@@ -28,7 +29,7 @@ function ListeInscriptionBenevole() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(ApiURLBenevoles + "/nouveaux", config);
+        const response = await axios.get(ApiURLBenevole + "nouveaux", config);
         response.data.forEach((benevole) => (benevole.expanded = false));
         setListeNewBenevoles(response.data);
         console.log("ListeNewBenevoles", response.data);
@@ -38,6 +39,7 @@ function ListeInscriptionBenevole() {
       }
     }
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   const handleExpandMore = async (benevoleId) => {
@@ -54,7 +56,7 @@ function ListeInscriptionBenevole() {
 
   const accept = async (benevoleId) => {
     axios
-      .put(ApiURLBenevoles + "/validate/" + benevoleId, null, config)
+      .put(ApiURLBenevole + "validate/" + benevoleId, null, config)
       .then((response) => {
         setListeNewBenevoles(
           listeNewBenevoles.filter((benevole) => benevole._id !== benevoleId)
@@ -74,7 +76,7 @@ function ListeInscriptionBenevole() {
 
   const refuse = async (benevoleId) => {
     axios
-      .delete(ApiURLBenevoles + "/" + benevoleId, config)
+      .delete(ApiURLBenevole + benevoleId, config)
       .then((response) => {
         setListeNewBenevoles(
           listeNewBenevoles.filter((benevole) => benevole._id !== benevoleId)
@@ -90,13 +92,25 @@ function ListeInscriptionBenevole() {
 
   return (
     <div>
+      <Header />
       <ToastContainer />
       <h1>Liste des nouvelles inscriptions de bénévoles</h1>
-      <div className="container" >
+      <div className="container">
         {listeNewBenevoles.map((benevole) => (
-          <Card className="item" key={benevole._id} style={{ width: "25%", border: "black solid 4px", borderRadius: "25px", marginBottom: "10px", boxShadow: "2px 4px 8px rgba(0, 0, 0, 1)"}}>
+          <Card
+            className="item"
+            key={benevole._id}
+            style={{
+              minWidth: "280px",
+              width: "25%",
+              border: "black solid 4px",
+              borderRadius: "25px",
+              marginBottom: "10px",
+              boxShadow: "2px 4px 8px rgba(0, 0, 0, 1)",
+            }}
+          >
             <CardContent>
-              <Avatar />
+              <PersonIcon />
               <Typography variant="h5" component="div">
                 {benevole.nomBenevole} {benevole.prenomBenevole}
               </Typography>
@@ -125,6 +139,7 @@ function ListeInscriptionBenevole() {
           </Card>
         ))}
       </div>
+      <Footer />
     </div>
   );
 }
