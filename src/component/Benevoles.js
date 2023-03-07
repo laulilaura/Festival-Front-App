@@ -3,8 +3,8 @@ import axios from "axios";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import ListBenevoles from "./ListBenevoles";
 
-import { FixedSizeList } from "react-window";
 import { Link } from "react-router-dom";
 
 import {
@@ -24,6 +24,12 @@ import candidatImage from "../picture/icons/candidat.png";
 import avantageImage from "../picture/icons/avantage.png";
 
 export default function Benevoles() {
+
+  function onClickList(){
+    document.getElementById('listeBenevoles').scrollIntoView({behavior:'smooth'});
+  }
+
+
   const [benevoles, setBenevoles] = React.useState([]);
 
   React.useEffect(() => {
@@ -66,7 +72,7 @@ export default function Benevoles() {
         </Typography>
         <Button
           component={Link}
-          to="#listBenevoles"
+          onClick={onClickList}
           variant="contained"
           sx={{ alignItems: "center", backgroundColor: "#F88F52", m: 2 }}
         >
@@ -333,49 +339,7 @@ export default function Benevoles() {
           </Box>
         </Grid>
       </Grid>
-
-      <Grid
-        id="listBenevoles"
-        container
-        spacing={2}
-        sx={{ height: "100%", width: "100%", display: "flex", m: 0, p: 0 }}
-      >
-        <Grid
-          xs={6}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Button
-            sx={{ backgroundColor: "#FBCE9E" }}
-            variant="filledTonal"
-            component={Link}
-            to="/maintenance"
-          >
-            Par crénau
-          </Button>
-        </Grid>
-        <Grid
-          xs={6}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Button
-            sx={{ backgroundColor: "#FBCE9E" }}
-            variant="filledTonal"
-            component={Link}
-            to="/maintenance"
-          >
-            Par zone
-          </Button>
-        </Grid>
-      </Grid>
-
+      <div id="listeBenevoles"><ListBenevoles sx={{m:15}} /></div>
       <Footer colorBackground="common.white" color="#FBCE9E" />
     </div>
   );

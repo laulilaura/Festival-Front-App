@@ -17,7 +17,8 @@ import {
 
 // import des images représentatives
 import chapiteauZone from "../picture/icons/chapiteauZone.png";
-import prochain from "../picture/icons/prochain.png";
+//import prochain from "../picture/icons/prochain.png";
+import prochain2 from "../picture/icons/prochain2.png";
 
 const baseURLGETZones = "http://localhost:3000/zone/";
 
@@ -146,7 +147,7 @@ function Zones() {
           p: 5,
         }}
       >
-        <div id="#listeZones">
+        <div id="listeZones">
         <List>
           {zones.map((zone) => (
             <Box
@@ -166,7 +167,7 @@ function Zones() {
                 xs={6}
                 sx={{ px: 5, display: "flex", flexDirection: "row" }}
               >
-                <img src={prochain} className="App-logo" alt="prochain" />
+                <img src={prochain2} className="App-logo" alt="prochain" />
                 <Typography variant="h4"> {zone.nomZone}</Typography>
               </Grid>
               <Grid

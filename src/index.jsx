@@ -51,7 +51,6 @@ const router = createBrowserRouter([
     element: <Benevoles />,
     errorElement: <ErrorPage />
   },{
-    // TODO: vérif que les paths te vont et que jles ai fait correctement
     path: "/admin",
     element: <AdminHome />,
     errorElement: <ErrorPage />

@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { Button, Grid } from "@mui/material";
 import { ApiURLBenevole, ApiURLAffectation, ApiURLZone } from "../config";
-import Header from "./Header";
+import HeaderAdmin from "./HeaderAdmin";
 import Footer from "./Footer";
 
 function Affectations() {
@@ -185,7 +185,7 @@ function Affectations() {
   let zoneCourante = null;
   return (
     <div>
-      <Header />
+      <HeaderAdmin />
       <ToastContainer />
 
       <Button variant="contained" color="primary" onClick={validate}>

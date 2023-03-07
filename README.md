@@ -102,3 +102,8 @@ npm i material-react-toastify
 ### phone
 npm i material-ui-phone-number
 npm install libphonenumber-js
+
+### icons
+npm install @mui/icons-material
+
+npm install --legacy-peer-deps @material-ui/icons

@@ -5,7 +5,7 @@ import MuiPhoneNumber from "material-ui-phone-number";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Header from "./Header";
+import HeaderAdmin from "./HeaderAdmin";
 import Footer from "./Footer";
 
 import {
@@ -81,7 +81,7 @@ export default function AdminHome() {
 
   return (
     <div className="AdminHome">
-      <Header />
+      <HeaderAdmin />
       <ToastContainer />
       {/* TODO: faire du css grid ou flex pr mettre correctement le form et le boutton */}
       <div className="Form" id="FormCreateBenevole">

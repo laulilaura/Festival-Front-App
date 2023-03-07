@@ -7,13 +7,13 @@ import {
   CardContent,
   Typography,
   Button,
-  Collapse,
+  Collapse
 } from "@mui/material";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { toast, ToastContainer } from "react-toastify";
-import Header from "./Header";
+import HeaderAdmin from "./HeaderAdmin";
 import Footer from "./Footer";
 
 function ListeInscriptionBenevole() {
@@ -92,7 +92,7 @@ function ListeInscriptionBenevole() {
 
   return (
     <div>
-      <Header />
+      <HeaderAdmin />
       <ToastContainer />
       <h1>Liste des nouvelles inscriptions de bénévoles</h1>
       <div className="container">
@@ -110,7 +110,6 @@ function ListeInscriptionBenevole() {
             }}
           >
             <CardContent>
-              <PersonIcon />
               <Typography variant="h5" component="div">
                 {benevole.nomBenevole} {benevole.prenomBenevole}
               </Typography>

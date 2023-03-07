@@ -31,14 +31,12 @@ const theme = createTheme({
 });
 
 const pages = [
-  { name: "Home", path: "/", styleSx: theme.basic },
-  { name: "Connexion Admin", path: "/connexion", styleSx: theme.basic },
-  { name: "Zones", path: "/zones", styleSx: theme.basic },
-  { name: "Jeux", path: "/jeux", styleSx: theme.basic },
-  { name: "Inscrition", path: "/inscription", styleSx: theme.basic },
+  { name: "Home", path: "/admin", styleSx: theme.basic },
+  { name: "Affectation", path: "/affectations", styleSx: theme.basic },
+  { name: "Demande d'inscription", path: "/listeInscriptionBenevole", styleSx: theme.basic }
 ];
 
-function Header() {
+function HeaderAdmin() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -123,19 +121,6 @@ function Header() {
                     </MenuItem>
                   </Link>
                 ))}
-                <Link
-                  key="Bénévoles"
-                  to="/benevoles"
-                  onClick={handleCloseNavMenu}
-                  rel="stylesheet"
-                  sx={{ display: "none" }}
-                >
-                  <MenuItem>
-                    <Typography textAlign="center" variant="h6">
-                      Bénévoles
-                    </Typography>
-                  </MenuItem>
-                </Link>
               </div>
             </Menu>
           </Box>
@@ -186,20 +171,10 @@ function Header() {
                 </MenuItem>
               </Link>
             ))}
-            <Button
-              id="buttonBenevoles"
-              variant="contained"
-              sx={{ m: 2, backgroundColor: "#F88F52" }}
-              component={Link}
-              to="/benevoles"
-            >
-              {" "}
-              Bénévoles
-            </Button>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default Header;
+export default HeaderAdmin;
