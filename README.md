@@ -1,83 +1,26 @@
-# Getting Started with Create React App
+	***PROJET WEB - CORENTIN CLEMENT - LAURA BENAITON***
+	<sub>Rendu 07/03/2023</sub>
+  
+Projet Frontend réalisé en Reactjs, utilisant différentes librairie et dépendances
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Le projet se lance avec la commande :
 
-## Available Scripts
+>`npm start`
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
+Vous arriverez sur un page 'Home', vous pouvez y naviguer librement.
+Il est également possible de se connecter à un compte Admin, qui possède plus de droits qu'un simple utilisateurs exterieur :
 
 Connexion admin :
-email : corentinAdmin@gmail.com
-mdp : test
+>email : corentinAdmin@gmail.com
+>mdp : test
+
+Notre projet se base sur deux plans différents :
++ **Bénévole :** Ils ont accès à toutes les informations utiles qui pourrait leur servir, comme le listage des zones, des jeux ou encore des bénévoles. Ils ont également accès à des informations pour le festival.
++ **Admin :** Ils ont accès à une seconde partie du site web, après une connexion dans la barre de navigation public 'Connexion Admin', après s'être connecté, il faut se rendre sur l'URL /affectations où l'admin pourra naviguer sur plusieurs pages afin d'affecter des bénévoles à des zones, de valider l'inscription de benevoles etc
 
 
+Voici ci dessous les différentes dépendances installés :
 
-### !! Si problème de dépendance
---legacy-peer-deps
 
 ### install Mui (React component library)
 npm install @mui/material @emotion/react @emotion/styled
@@ -106,4 +49,7 @@ npm install libphonenumber-js
 ### icons
 npm install @mui/icons-material
 
-npm install --legacy-peer-deps @material-ui/icons
+<sub>
+### !! Si problème de dépendance
+--legacy-peer-deps
+</sub>
