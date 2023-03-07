@@ -2,12 +2,12 @@ import * as React from "react";
 import imageConnexion from "../picture/familleHome.png";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography, Link } from "@mui/material";
 import { ApiURLAuth } from "../config";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//import { useHistory } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 function Connexion() {
   //let history = useHistory();
@@ -37,7 +37,7 @@ function Connexion() {
       .then((response) => {
         localStorage.setItem("token", response.data.token);
         toast.success("Vous êtes connecté");
-        //history.push("/affectations");
+        action();
       })
       .catch((error) => {
         console.log(error);
@@ -59,6 +59,10 @@ function Connexion() {
         }
       });
   };
+
+  function action() {
+    return redirect(`/affectations`);
+  }
 
   return (
     <div className="Connexion">
@@ -142,6 +146,7 @@ function Connexion() {
           <Button
             id="Button"
             type="submit"
+            component={Link} to="/affectations"
             onClick={handleSubmit}
             variant="contained"
             sx={{ m: 2 }}
