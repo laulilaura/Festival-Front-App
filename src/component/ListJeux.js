@@ -97,7 +97,7 @@ export default function ListJeux() {
       });
   }, []);
 
-  const handleZoneChange = (event) => {
+  const   handleZoneChange = (event) => {
     const searchZone = event.target.value;
     setZoneSelected(searchZone);
 

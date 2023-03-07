@@ -13,6 +13,7 @@ import Affectations from './component/Affectations';
 import Incription from './component/Incription';
 import ListeInscriptionBenevole from './component/ListeInscriptionBenevole';
 import AdminBenevoles from './component/AdminBenevoles';
+import AdminJeux from './component/AdminJeux';
 import ErrorPage from "./component/error-page";
 
 import reportWebVitals from './reportWebVitals';
@@ -70,6 +71,14 @@ const router = createBrowserRouter([
   },{
     path: "/adminBenevoles",
     element: <AdminBenevoles />,
+    errorElement: <ErrorPage />
+  },{
+    path: "/adminJeux",
+    element: <AdminJeux />,
+    errorElement: <ErrorPage />
+  },{
+    path: "*",
+    element: <ErrorPage />,
     errorElement: <ErrorPage />
   }
 ]);

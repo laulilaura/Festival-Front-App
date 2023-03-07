@@ -7,10 +7,8 @@ import { ApiURLAuth } from "../config";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//import { useHistory } from "react-router-dom";
 
 function Connexion() {
-  //let history = useHistory();
 
   const [credentials, setCredentials] = React.useState({
     identifiant: "",
@@ -37,7 +35,6 @@ function Connexion() {
       .then((response) => {
         localStorage.setItem("token", response.data.token);
         toast.success("Vous êtes connecté");
-        //history.push("/affectations");
       })
       .catch((error) => {
         console.log(error);
