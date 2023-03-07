@@ -31,7 +31,8 @@ const theme = createTheme({
 });
 
 const pages = [
-  { name: "Home", path: "/admin", styleSx: theme.basic },
+  { name: "Créer bénévole", path: "/admin", styleSx: theme.basic },
+  { name: "Créer un jeu", path: "/adminJeux", styleSx: theme.basic },
   { name: "Affectation", path: "/affectations", styleSx: theme.basic },
   { name: "Demande d'inscription", path: "/listeInscriptionBenevole", styleSx: theme.basic }
 ];

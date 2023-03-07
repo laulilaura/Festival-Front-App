@@ -26,7 +26,7 @@ import { ApiURLAffectation, ApiURLZone } from "../config";
 export default function ListBenevoles() {
   // VARIABLES COMMUNES
   
-  const [selectedValue, setSelectedValue] = useState("Par zone");
+  const [selectedValue, setSelectedValue] = useState("Par creneau");
   const [benevoles, setBenevoles] = React.useState([]);
 
   const handleChange = (event) => {
@@ -114,7 +114,7 @@ export default function ListBenevoles() {
           mt: 5,
         }}
       >
-        {["Par zone", "Par creneau"].map((value) => (
+        {["Par creneau","Par zone"].map((value) => (
           <Radio
             key={value}
             value={value}
@@ -162,16 +162,17 @@ export default function ListBenevoles() {
                 onChange={(event) => setCreneauHeureSelected(event.target.value)}
                 autoWidth
               >
+                {/* Nous n'avons pas eu le temps de créer tous les creneaux en base de données, donc nous laissons uniquement 8h et 9h */}
                 <MenuItem value={" 8h"}>8h</MenuItem>
                 <MenuItem value={" 9h"}>9h</MenuItem>
-                <MenuItem value={" 10h"}>10h</MenuItem>
+                 {/*<MenuItem value={" 10h"}>10h</MenuItem>
                 <MenuItem value={" 11h"}>11h</MenuItem>
                 <MenuItem value={" 12"}>12h</MenuItem>
                 <MenuItem value={" 13h"}>13h</MenuItem>
                 <MenuItem value={" 14h"}>14h</MenuItem>
                 <MenuItem value={" 15h"}>15h</MenuItem>
                 <MenuItem value={" 16h"}>16h</MenuItem>
-                <MenuItem value={" 17h"}>17h</MenuItem>
+        <MenuItem value={" 17h"}>17h</MenuItem>*/}
               </Select>
             </FormControl>
             <Button onClick={handleCreneauChange}>Rechercher</Button>

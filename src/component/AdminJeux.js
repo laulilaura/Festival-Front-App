@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import Footer from "./Footer";
-import Header from "./Header";
+import HeaderAdmin from "./HeaderAdmin";
 import axios from "axios";
 import { ApiURLJeu } from "../config";
 import {
@@ -33,7 +33,7 @@ function AdminJeux() {
   const [listeJeux, setListeJeux] = useState([]);
   const [jeuToModif, setJeuToModif] = useState({});
   const [isEditing, setIsEditing] = useState(false);
-  const [erreurForm, setErreurForm] = useState(false);
+  const [erreurForm] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -117,7 +117,7 @@ function AdminJeux() {
   return (
     <div>
       <ToastContainer />
-      <Header />
+      <HeaderAdmin />
       {isEditing ? (
         <div className="container">
           <Grid>

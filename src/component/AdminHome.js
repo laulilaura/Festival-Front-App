@@ -13,6 +13,7 @@ import {
   InputLabel,
   Input,
   Button,
+  Typography,
 } from "@mui/material/";
 
 export default function AdminHome() {
@@ -81,6 +82,9 @@ export default function AdminHome() {
   return (
     <div className="AdminHome">
       <HeaderAdmin />
+      <Typography variant="h2" gutterBottom sx={{display: 'flex',justifyContent: 'center'}}>
+          Création de bénévoles
+      </Typography>
       <ToastContainer />
       {/* TODO: faire du css grid ou flex pr mettre correctement le form et le boutton */}
       <div className="Form" id="FormCreateBenevole">
