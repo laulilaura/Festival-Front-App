@@ -10,7 +10,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { redirect } from "react-router-dom";
 
 function Connexion() {
-  //let history = useHistory();
 
   const [credentials, setCredentials] = React.useState({
     identifiant: "",

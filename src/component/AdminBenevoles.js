@@ -23,6 +23,7 @@ import { ApiURLBenevole } from "../config";
 import Footer from "./Footer";
 import Header from "./Header";
 import { toast, ToastContainer } from "react-toastify";
+import FormAdminBenevoles from "./FormAdminBenevoles";
 
 function AdminBenevoles() {
   const token = localStorage.getItem("token");
@@ -124,7 +125,9 @@ function AdminBenevoles() {
         } else {
           switch (error.response.status) {
             case 404:
-              toast.error("Il est impossible de modifier un bénéole actuellement");
+              toast.error(
+                "Il est impossible de modifier un bénéole actuellement"
+              );
               break;
             case 500:
               setErreurForm(true);
@@ -204,11 +207,7 @@ function AdminBenevoles() {
                   onChange={handleChange}
                   erreur={erreurForm}
                 />
-                <Button
-                  type="submit"
-                  color="primary"
-                  variant="contained"
-                >
+                <Button type="submit" color="primary" variant="contained">
                   Enregistrer
                 </Button>
                 <Button
@@ -224,38 +223,51 @@ function AdminBenevoles() {
         </div>
       ) : (
         <div className="container">
-          <h1>Liste des bénévoles</h1>
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
-            {listeBenevoles.map((benevole) => (
-              <ListItem key={benevole._id}>
-                <ListItemAvatar>
-                  <Avatar />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={benevole.prenomNom}
-                  secondary={benevole.emailBenevole}
-                />
-                <ListItemSecondaryAction>
-                  <IconButton
-                    edge="end"
-                    aria-label="edit"
-                    onClick={handleEdit(benevole)}
-                  >
-                    <ModeIcon />
-                  </IconButton>
-                  <IconButton
-                    edge="end"
-                    aria-label="delete"
-                    onClick={handleDelete(benevole._id)}
-                  >
-                    <DeleteForeverOutlinedIcon />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </List>
+          <Grid container spacing={3}>
+            <Grid item xs={5}>
+              <h1>Liste des bénévoles</h1>
+              <List
+                sx={{
+                  width: "100%",
+                  maxWidth: 360,
+                  bgcolor: "background.paper",
+                }}
+              >
+                {listeBenevoles.map((benevole) => (
+                  <ListItem key={benevole._id}>
+                    <ListItemAvatar>
+                      <Avatar />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={benevole.prenomNom}
+                      secondary={benevole.emailBenevole}
+                    />
+                    <ListItemSecondaryAction>
+                      <IconButton
+                        edge="end"
+                        aria-label="edit"
+                        onClick={handleEdit(benevole)}
+                      >
+                        <ModeIcon />
+                      </IconButton>
+                      <IconButton
+                        edge="end"
+                        aria-label="delete"
+                        onClick={handleDelete(benevole._id)}
+                      >
+                        <DeleteForeverOutlinedIcon />
+                      </IconButton>
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                ))}
+              </List>
+            </Grid>
+            <Grid item xs={7}>
+              <ToastContainer />
+              <h1>Ajouter un bénévole</h1>
+              <FormAdminBenevoles />
+            </Grid>
+          </Grid>
         </div>
       )}
       <Footer />
