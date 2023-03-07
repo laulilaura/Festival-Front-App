@@ -112,8 +112,14 @@ function AdminBenevoles() {
   };
 
   const handleSave = () => {
+    const infoBenevole = {
+      nomBenevole: benevoleToModif.nomBenevole,
+      prenomBenevole: benevoleToModif.prenomBenevole,
+      telBenevole: benevoleToModif.tel,
+      emailBenevole: benevoleToModif.email,
+    };
     axios
-      .put(ApiURLBenevole + benevoleToModif._id, benevoleToModif, config)
+      .put(ApiURLBenevole + benevoleToModif._id, infoBenevole, config)
       .then((response) => {
         toast.success("Le bénévole a été modifié");
         console.log(response);

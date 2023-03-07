@@ -95,7 +95,7 @@ function AdminJeux() {
   const handleSave = async (event) => {
     event.preventDefault();
     try {
-      axios.put(ApiURLJeu + jeuToModif.id, jeuToModif, config);
+      axios.put(ApiURLJeu + jeuToModif._id, jeuToModif, config);
       toast.success("Le jeu a bien été modifié");
       setIsEditing(false);
       setListeJeux(
