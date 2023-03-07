@@ -20,7 +20,7 @@ import chapiteauZone from "../picture/icons/chapiteauZone.png";
 //import prochain from "../picture/icons/prochain.png";
 import prochain2 from "../picture/icons/prochain2.png";
 
-const baseURLGETZones = "http://localhost:3000/zone/";
+import { ApiURLZone } from "../config";
 
 function Zones() {
 
@@ -32,7 +32,7 @@ function Zones() {
 
   React.useEffect(() => {
     axios
-      .get(baseURLGETZones)
+      .get(ApiURLZone)
       .then((response) => {
         setZones(response.data);
       })

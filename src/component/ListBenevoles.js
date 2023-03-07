@@ -78,7 +78,7 @@ export default function ListBenevoles() {
   const handleCreneauChange = (event) => {
 
     const data = {
-        creneau: creneauSelected + creneauHeureSelected,
+      creneau: creneauSelected + creneauHeureSelected,
     };
 
     // Appel API pour récupérer les benevoles correspondants au creneau sélectionné
