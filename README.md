@@ -1,5 +1,5 @@
-	***PROJET WEB - CORENTIN CLEMENT - LAURA BENAITON***
-	<sub>Rendu 07/03/2023</sub>
+***PROJET WEB - CORENTIN CLEMENT - LAURA BENAITON***
+<sub>Rendu 07/03/2023</sub>
   
 Projet Frontend réalisé en Reactjs, utilisant différentes librairie et dépendances
 
