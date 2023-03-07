@@ -14,7 +14,7 @@ import { ApiURLJeu } from "../config";
 function FormAdminJeux() {
   const [jeu, setJeu] = useState({
     nom: "",
-    tpye: undefined,
+    typeJeu: "Enfant",
   });
 
   const [erreurForm, setErreurForm] = useState(false);
@@ -79,8 +79,10 @@ function FormAdminJeux() {
           color="secondary"
           error={erreurForm}
         />
+        </FormControl>
+        <FormControl>
         <InputLabel htmlFor="my-input">Type du jeu</InputLabel>
-        <Select value="Enfant" autoWidth onChange={handleChangeSelect}>
+        <Select value={jeu.typeJeu} autoWidth onChange={handleChangeSelect}>
           <MenuItem value="Enfant">Enfant</MenuItem>
           <MenuItem value="Famille">Famille</MenuItem>
           <MenuItem value="Ambiance">Ambiance</MenuItem>
